@@ -22,31 +22,12 @@
     <!-- WRAPPER PAGE -->
     <div class="wrapper">
 
-        <!-- SIDEBAR -->
-        <div id="sidebar">
-            <div class="sidebar-header d-flex align-items-center justify-content-center border">
-                <h6 class="text-center m-0">Learn</h6>
-            </div> <!-- /.sidebar-header -->
-
-            <ul class="sidebar-menu list-unstyled p-3">
-                <li class="border"><a href="page/d3-js.html" class="nav-link">d3.js</a></li>
-                <li class="border"><a href="page/git-github.html" class="nav-link">git & github</a></li>
-            </ul> <!-- ./sidebar-menu -->
-        </div>
-        <!-- /.SIDEBAR -->
-
         <!-- CONTENT -->
         <div id="content">
             <nav id="navbar" class="navbar navbar-expand-lg d-block w-100">
-                <div class="navbar-toggler float-left text-left d-flex align-items-center h-100">
-                    <a href="javascript:void(0);" id="sidebar-collapse"><i class="fas fa-grip-vertical"></i></a>
-                </div> <!-- /.navbar-toggler -->
-
-                <ul class="navbar-nav float-right text-right d-flex align-items-center h-100">
-                    <li class="nav-item">
-                        <a href="page/test.html" class="nav-link text-light">Test</a>
-                    </li>
-                </ul>
+                <div class="d-flex align-items-center justify-content-center h-100 w-100">
+                    <h3 class="text-center mb-0">Learn</h3>
+                </div>
             </nav> <!-- /.NAVBAR -->
 
             <div class="inner-content p-4">
@@ -66,16 +47,28 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card rounded-0 border-0 p-4">
+
+                            <ul class="sumary list-unstyled">
+                                <h3>Sumário:</h3>
+                                <li class="nav-item">
+                                    <a href="page/d3-js.html" class="nav-link text-primary">d3.js</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="page/git-github.html" class="nav-link text-primary">git & github</a>
+                                </li>
+                            </ul>
+
+                        </div> <!-- /.card -->
+                    </div>
+                </div> <!-- /.row (Card) -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card rounded-0 border-0 p-4">
                             <main id="main" class="main">
                                 <div class="container">
 
-                                    <div class="filter">
-                                        <select name="year" id="year"></select>
-                                    </div>
 
-                                    <div class="mx-auto">
-                                        <svg id="chart" class="chart"></svg>
-                                    </div>
 
                                 </div>
                             </main>
@@ -104,11 +97,8 @@
     <!-- Optional JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="text/javascript" src="assets/script/script-d3.js"></script>
+
     <script type="text/javascript">
-        /** Sidebar Collapse */
-        $('#sidebar-collapse').on('click', function () {
-            $('#sidebar, #content').toggleClass('active');
-        });
 
         document.querySelectorAll('.nav-link').forEach(link => {
             const main = document.getElementById('main')

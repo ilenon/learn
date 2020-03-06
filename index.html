@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="icon" type="image/x-icon"
+        href="https://lh3.googleusercontent.com/proxy/FBcoHxvrzCPiNrXWV7JHBTzI1j2P9VLYZ0E9mCBieBnnQR38pJUM_EQvrfclLhXx6Aid-M7YMj5r8IutNVrR1EJitoLFDsrZvATU8ZOQIPt9HmJleG1h-f0rqXOsp5Ppt5wBR8kuG13XHMLbU1J2j10" />
+
+    <title>Learn!</title>
+</head>
+
+<body>
+
+    <!-- WRAPPER PAGE -->
+    <div class="wrapper">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <div class="sidebar-header d-flex align-items-center justify-content-center border">
+                <h6 class="text-center m-0">Learn</h6>
+            </div> <!-- /.sidebar-header -->
+
+            <ul class="sidebar-menu list-unstyled p-3">
+                <li class="border"><a href="page/d3-js.html" class="nav-link">d3.js</a></li>
+                <li class="border"><a href="page/git-github.html" class="nav-link">git & github</a></li>
+            </ul> <!-- ./sidebar-menu -->
+        </div>
+        <!-- /.SIDEBAR -->
+
+        <!-- CONTENT -->
+        <div id="content">
+            <nav id="navbar" class="navbar navbar-expand-lg d-block w-100">
+                <div class="navbar-toggler float-left text-left d-flex align-items-center h-100">
+                    <a href="javascript:void(0);" id="sidebar-collapse"><i class="fas fa-grip-vertical"></i></a>
+                </div> <!-- /.navbar-toggler -->
+
+                <ul class="navbar-nav float-right text-right d-flex align-items-center h-100">
+                    <li class="nav-item">
+                        <a href="page/test.html" class="nav-link text-light">Test</a>
+                    </li>
+                </ul>
+            </nav> <!-- /.NAVBAR -->
+
+            <div class="inner-content p-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div
+                            class="card rounded-0 border-0 p-3 d-flex flex-row align-items-center justify-content-between nowrap">
+                            <div class="form-group form-inline w-100 m-0">
+                                <input type="text" class="form-control form-control-sm w-100" name="search" id="search"
+                                    placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /.row (Cabeçalho) -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card rounded-0 border-0 p-4">
+                            <main id="main" class="main">
+                                <div class="container">
+
+                                    <div class="filter">
+                                        <select name="year" id="year"></select>
+                                    </div>
+
+                                    <div class="mx-auto">
+                                        <svg id="chart" class="chart"></svg>
+                                    </div>
+
+                                </div>
+                            </main>
+                        </div> <!-- /.card -->
+                    </div>
+                </div> <!-- /.row (Card) -->
+
+            </div> <!-- /.INNER-CONTENT -->
+
+            <footer class="border-top text-center">
+                <blockquote>
+                    <p>“Education without application is just entertainment.”</p>
+                    <p><small>— Tim Sanders</small></p>
+                </blockquote>
+            </footer>
+        </div>
+        <!-- /.CONTENT -->
+
+    </div><!-- ./wrapper -->
+    <!-- ./WRAPPER PAGE -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Optional JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="assets/script/script-d3.js"></script>
+    <script type="text/javascript">
+        /** Sidebar Collapse */
+        $('#sidebar-collapse').on('click', function () {
+            $('#sidebar, #content').toggleClass('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const main = document.getElementById('main')
+
+            link.onclick = function (e) {
+                e.preventDefault()
+
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => main.innerHTML = html)
+            }
+        });
+
+    </script>
+</body>
+
+</html>
